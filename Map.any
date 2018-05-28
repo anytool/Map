@@ -9,7 +9,7 @@ module.exports  = function(a, b) {
     workspace.contribute(a, "map", {
         render: function() {
             // create group view
-            return __r.createElement(MapView, {
+            return __r.createElement(MapView.default, {
                 style: this.state.style,
                 initialRegion: {
                     latitude: 37.78825,
