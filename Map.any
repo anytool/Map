@@ -1,0 +1,36 @@
+var workspace   = require("ANYWorkspace");
+var __r         = require("React");
+var __rN        = require("ReactNative");
+var __rC        = require("CreateReactClass");
+var MapView     = require("RNMaps");
+__r.createClass = __rC;
+/* a:instance, b:callbacks */
+module.exports  = function(a, b) {
+    workspace.contribute(a, "map", {
+        render: function() {
+            // create group view
+            return __r.createElement(MapView, {
+                style: this.state.style,
+                initialRegion: {
+                    latitude: 37.78825,
+                    longitude: -122.4324,
+                    latitudeDelta: 0.0922,
+                    longitudeDelta: 0.0421
+                }
+            }, this.redeem());
+        }
+    });
+    b && b();
+    // need to refresh to view
+    if (/^passive$/i.test(a.__type)) {
+        // get view
+        var view = a.dom(true);
+        // view exists
+        if (view) {
+            // clear child cache
+            view.childs = null;
+            // reload view
+            view.setState({});
+        }
+    }
+}
