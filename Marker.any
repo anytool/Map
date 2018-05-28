@@ -11,8 +11,8 @@ module.exports  = function(a, b) {
             // create group view
             return __r.createElement(MapView.default.Marker, {
                 coordinate: {
-                    latitude: 37.78825,
-                    longitude: -122.4324,
+                    latitude: parseFloat(a.__props.latitude || "37.78825"),
+                    longitude: parseFloat(a.__props.longitude || "-122.4324"),
                     latitudeDelta: 0.0922,
                     longitudeDelta: 0.0421
                 }
