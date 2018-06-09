@@ -19,7 +19,7 @@ module.exports  = function(a, b) {
             });
         }
     });
-    b && b();
+    b.created && b.created();
     // need to refresh to view
     if (/^passive$/i.test(a.__type)) {
         // get view
