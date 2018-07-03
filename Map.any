@@ -16,7 +16,12 @@ module.exports  = function(a, b) {
                     longitude: -122.4324,
                     latitudeDelta: 0.0922,
                     longitudeDelta: 0.0421
-                }
+                },
+                onPress: function(e) {
+                    this.active();
+                    b.pressed && b.pressed(e.nativeEvent);
+                    this.setState({});
+                }.bind(this)
             }, this.redeem());
         }
     });
