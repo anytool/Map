@@ -15,7 +15,12 @@ module.exports  = function(a, b) {
                     longitude: parseFloat(a.__props.longitude || "-122.4324"),
                     latitudeDelta: 0.0922,
                     longitudeDelta: 0.0421
-                }
+                },
+                onPress: function(e) {
+                    this.active();
+                    a.pressed && a.pressed();
+                    this.setState({});
+                }.bind(this)
             });
         }
     });
