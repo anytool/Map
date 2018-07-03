@@ -18,7 +18,7 @@ module.exports  = function(a, b) {
                 },
                 onPress: function(e) {
                     this.active();
-                    b.pressed && b.pressed();
+                    b.pressed && b.pressed(e.nativeEvent);
                     this.setState({});
                 }.bind(this)
             });
