@@ -10,7 +10,7 @@ module.exports  = function(a, b) {
         render: function() {
             // create group view
             return __r.createElement(MapView.default, {
-                style: this.state.style,
+                style: this.state.style || { flex: 1 },
                 initialRegion: {
                     latitude: 37.78825,
                     longitude: -122.4324,
