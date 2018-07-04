@@ -25,7 +25,7 @@ module.exports  = function(a, b) {
                 }.bind(this),
                 onUserLocationChange    : function(e) {
                     this.active();
-                    b.userLocationChange && b.userLocationChange(e.nativeEvent);
+                    b.userLocationChanged && b.userLocationChanged(e.nativeEvent);
                     this.setState({});
                 }.bind(this),
                 onRegionChangeComplete  : function(e) {
