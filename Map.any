@@ -10,16 +10,27 @@ module.exports  = function(a, b) {
         render: function() {
             // create group view
             return __r.createElement(MapView.default, {
-                style: this.state.style || { flex: 1 },
-                initialRegion: {
-                    latitude: 37.78825,
-                    longitude: -122.4324,
-                    latitudeDelta: 0.0922,
-                    longitudeDelta: 0.0421
+                style                   : this.state.style || { flex: 1 },
+                showsUserLocation       : true,
+                initialRegion           : {
+                    latitude                : 37.78825,
+                    longitude               : -122.4324,
+                    latitudeDelta           : 0.0922,
+                    longitudeDelta          : 0.0421
                 },
-                onPress: function(e) {
+                onPress                 : function(e) {
                     this.active();
                     b.pressed && b.pressed(e.nativeEvent);
+                    this.setState({});
+                }.bind(this)
+                onUserLocationChange    : function(e) {
+                    this.active();
+                    b.userLocationChange && b.userLocationChange(e);
+                    this.setState({});
+                }.bind(this),
+                onRegionChangeComplete  : function(e) {
+                    this.active();
+                    b.onRegionChangeComplete && b.onRegionChangeComplete(e);
                     this.setState({});
                 }.bind(this)
             }, this.redeem());
