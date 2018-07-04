@@ -30,7 +30,7 @@ module.exports  = function(a, b) {
                 }.bind(this),
                 onRegionChangeComplete  : function(e) {
                     this.active();
-                    b.onRegionChangeComplete && b.onRegionChangeComplete(e);
+                    b.regionChanged && b.regionChanged(e);
                     this.setState({});
                 }.bind(this)
             }, this.redeem());
