@@ -22,7 +22,7 @@ module.exports  = function(a, b) {
                     this.active();
                     b.pressed && b.pressed(e.nativeEvent);
                     this.setState({});
-                }.bind(this)
+                }.bind(this),
                 onUserLocationChange    : function(e) {
                     this.active();
                     b.userLocationChange && b.userLocationChange(e);
